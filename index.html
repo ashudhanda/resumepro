@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume Builder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<nav class="navbar">
+<div class="logo">ResumePro</div>
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#builder">Resume Builder</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="#about">About Us</a></li>
+</ul>
+</nav>
+</header>
+
+<section id="home" class="home">
+<div class="home-content">
+<h1>Create Professional Resume Easily</h1>
+<p>Build modern resumes in minutes with live preview.</p>
+<a href="#builder" class="btn">Start Building</a>
+</div>
+</section>
+
+<section id="builder" class="builder">
+<h2>Resume Builder</h2>
+
+<div class="container">
+
+<div class="form-box">
+
+<label>Full Name</label>
+<input type="text" id="name">
+
+<label>Job Role</label>
+<input type="text" id="role">
+
+<label>Email</label>
+<input type="text" id="email">
+
+<label>Phone</label>
+<input type="text" id="phone">
+
+<label>Location</label>
+<input type="text" id="location">
+
+<label>About Me</label>
+<textarea id="aboutme"></textarea>
+
+<label>Education</label>
+<input type="text" id="edu">
+
+<label>Experience</label>
+<textarea id="exp"></textarea>
+
+<label>Skills (comma separated)</label>
+<input type="text" id="skills">
+
+<button id="download-btn">Download PDF</button>
+
+</div>
+
+<div class="preview-box">
+
+<h1 id="resume-name">Your Name</h1>
+<h3 id="resume-role">Your Role</h3>
+<p id="resume-contact">Email | Phone | Location</p>
+
+<hr>
+
+<h4>About Me</h4>
+<p id="resume-about">Your summary here.</p>
+
+<h4>Education</h4>
+<p id="resume-edu">Your education here.</p>
+
+<h4>Experience</h4>
+<p id="resume-exp">Your experience here.</p>
+
+<h4>Skills</h4>
+<div id="resume-skills">Your skills here.</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="contact" class="contact">
+<h2>Contact Us</h2>
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea placeholder="Your Message"></textarea>
+<button>Send Message</button>
+</section>
+
+<section id="about" class="about">
+<h2>About Us</h2>
+
+<div class="about-box">
+
+<div class="about-image">
+<img src="images/teacher.png" alt="Teacher">
+</div>
+
+<div class="about-text">
+<h3>Our Mentor</h3>
+<p>
+Under the guidance of our respected teacher, this platform is built to help
+students, freshers and professionals create powerful resumes easily.
+</p>
+
+<p>
+Their mentorship inspires innovation, confidence and practical learning for students.
+ResumePro focuses on simplicity, quality and professional growth.
+</p>
+</div>
+
+</div>
+</section>
+<footer>
+<p>© 2026 ResumePro | All Rights Reserved</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
