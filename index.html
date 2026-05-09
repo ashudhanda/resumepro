@@ -36,37 +36,46 @@
 <div class="form-box">
 
 <label>Full Name</label>
-<input type="text" id="name">
+<input type="text" id="name" placeholder="Enter full name">
+<span class="error" id="err-name">Name is required</span>
 
 <label>Job Role</label>
-<input type="text" id="role">
+<input type="text" id="role" placeholder="Enter job role">
+<span class="error" id="err-role">Job role is required</span>
 
 <label>Email</label>
-<input type="email" id="email">
+<input type="email" id="email" placeholder="Enter email">
+<span class="error" id="err-email">Valid email is required</span>
 
 <label>Phone</label>
-<input type="number" id="phone">
+<input type="tel" id="phone" placeholder="Enter 10 digit phone" maxlength="10">
+<span class="error" id="err-phone">Enter valid 10 digit phone number</span>
 
 <label>Location</label>
-<input type="text" id="location">
+<input type="text" id="location" placeholder="Enter location">
+<span class="error" id="err-location">Location is required</span>
 
 <label>About Me</label>
-<textarea id="aboutme"></textarea>
+<textarea id="aboutme" placeholder="Write about yourself"></textarea>
+<span class="error" id="err-aboutme">About me is required</span>
 
 <label>Education</label>
-<input type="text" id="edu">
+<input type="text" id="edu" placeholder="Enter education details">
+<span class="error" id="err-edu">Education is required</span>
 
 <label>Experience</label>
-<textarea id="exp"></textarea>
+<textarea id="exp" placeholder="Enter experience details"></textarea>
+<span class="error" id="err-exp">Experience is required</span>
 
 <label>Skills (comma separated)</label>
-<input type="text" id="skills">
+<input type="text" id="skills" placeholder="HTML, CSS, JavaScript">
+<span class="error" id="err-skills">Skills are required</span>
 
 <button id="download-btn">Download PDF</button>
 
 </div>
 
-<div class="preview-box">
+<div class="preview-box" id="resume-preview">
 
 <h1 id="resume-name">Your Name</h1>
 <h3 id="resume-role">Your Role</h3>
@@ -93,40 +102,90 @@
 
 <section id="contact" class="contact">
 <h2>Contact Us</h2>
-<input type="text" placeholder="Your Name">
-<input type="email" placeholder="Your Email">
-<textarea placeholder="Your Message"></textarea>
-<button>Send Message</button>
+<input type="text" id="c-name" placeholder="Your Name">
+<span class="error" id="err-c-name">Name is required</span>
+
+<input type="email" id="c-email" placeholder="Your Email">
+<span class="error" id="err-c-email">Valid email is required</span>
+
+<textarea id="c-message" placeholder="Your Message"></textarea>
+<span class="error" id="err-c-msg">Message is required</span>
+
+<button id="contact-btn">Send Message</button>
 </section>
 
 <section id="about" class="about">
 <h2>About Us</h2>
 
+<p class="about-intro">We are just a bunch of passionate students who got tired of seeing great people struggle with boring resumes. So we built something about it! Under the amazing guidance of Dr. Abhishek Thakur, we created ResumePro — a fun, easy and free way to build resumes that actually get noticed. No design skills needed, no confusion, just fill and download. We believe everyone deserves a resume that represents them well — whether you are a fresher, a student or a working professional. We have got you covered!</p>
+
 <div class="about-box">
 
 <div class="about-image">
-<img src="teacher.png" alt="Teacher">
+<h3 class="mentor-name" style="margin-bottom:10px;">Our Mentor</h3>
+<img src="image/teacher.png" alt="Teacher">
+<h3 class="mentor-name">Dr. Abhishek Thakur</h3>
+<a href="https://atschool.in/#sec-z73p9q" target="_blank" class="mentor-link">Visit Profile</a>
+<div class="social-links" style="justify-content:center;margin-top:8px;">
+<a href="https://www.linkedin.com/in/dr-abhishek-thakur-00123321" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+</a>
+<a href="https://www.youtube.com/@atschooldotin" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+</a>
+</div>
 </div>
 
-<div class="about-text">
-<h3>Our Mentor</h3>
-<p>
-Under the guidance of our respected teacher, this platform is built to help
-students, freshers and professionals create powerful resumes easily.
-</p>
+</div>
 
-<p>
-Their mentorship inspires innovation, confidence and practical learning for students.
-ResumePro focuses on simplicity, quality and professional growth.
-</p>
+<h3 class="team-heading">Meet Our Team</h3>
+
+<div class="team-box">
+
+<div class="member-card">
+<div class="member-img-circle">
+<img src="image/ashu.png" alt="Ashu">
+</div>
+<h4>Ashu</h4>
+<div class="social-links">
+<a href="https://www.linkedin.com/in/ashu-dhanda-4040a8399" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+</a>
+<a href="https://github.com/ashudhanda" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+</a>
+<a href="https://www.instagram.com/ashu_dhanda__" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
+</a>
+</div>
+</div>
+
+<div class="member-card">
+<div class="member-img-circle">
+<img src="image/shinu.png" alt="Deepansh">
+</div>
+<h4>Deepansh</h4>
+<div class="social-links">
+<a href="https://www.linkedin.com/in/deepansh-99658a405" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+</a>
+<a href="https://github.com/ashudhanda" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+</a>
+<a href="https://www.instagram.com/its__shinuuu__" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
+</a>
+</div>
 </div>
 
 </div>
 </section>
+
 <footer>
 <p>© 2026 ResumePro | All Rights Reserved</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
