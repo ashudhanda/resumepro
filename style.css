@@ -26,7 +26,7 @@ z-index:100;
 .logo{
 font-size:28px;
 font-weight:bold;
-color:#16a34a;
+color:green;
 }
 
 .nav-links{
@@ -88,14 +88,6 @@ font-size:38px;
 color:#16a34a;
 }
 
-.about p{
-max-width:800px;
-margin:auto;
-text-align:center;
-font-size:18px;
-line-height:1.7;
-}
-
 .container{
 display:flex;
 gap:30px;
@@ -117,7 +109,7 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
 .contact textarea{
 width:100%;
 padding:12px;
-margin:10px 0;
+margin:10px 0 4px 0;
 border:1px solid #ccc;
 border-radius:6px;
 }
@@ -135,6 +127,7 @@ border:none;
 border-radius:6px;
 cursor:pointer;
 font-size:16px;
+margin-top:10px;
 }
 
 button:hover{
@@ -142,17 +135,28 @@ background:#15803d;
 }
 
 .preview-box h1{
-font-size:34px;
+font-size:42px;
 }
 
 .preview-box h3{
 color:#16a34a;
 margin:8px 0;
+font-size:22px;
 }
 
 .preview-box h4{
-margin-top:15px;
+margin-top:20px;
 color:#16a34a;
+font-size:20px;
+}
+
+.preview-box p{
+font-size:17px;
+line-height:1.8;
+}
+
+.skill-tag{
+font-size:16px;
 }
 
 .skill-tag{
@@ -168,6 +172,17 @@ max-width:700px;
 margin:auto;
 }
 
+.error{
+color:red;
+font-size:13px;
+display:none;
+margin-bottom:4px;
+}
+
+.input-error{
+border:1px solid red !important;
+}
+
 footer{
 background:#111;
 color:white;
@@ -176,26 +191,6 @@ padding:25px;
 margin-top:50px;
 }
 
-@media(max-width:900px){
-
-.navbar{
-flex-direction:column;
-gap:15px;
-}
-
-.nav-links{
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.home h1{
-font-size:38px;
-}
-
-.container{
-flex-direction:column;
-}
-}
 .about-box{
 display:flex;
 align-items:center;
@@ -230,6 +225,24 @@ color:#333;
 
 @media(max-width:900px){
 
+.navbar{
+flex-direction:column;
+gap:15px;
+}
+
+.nav-links{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.home h1{
+font-size:38px;
+}
+
+.container{
+flex-direction:column;
+}
+
 .about-image img{
 width:250px;
 }
@@ -237,4 +250,160 @@ width:250px;
 .about-text{
 text-align:center;
 }
+}
+
+@media print{
+@page{
+margin:15mm;
+size:A4;
+}
+
+header,
+.home,
+.form-box,
+.contact,
+#about,
+footer{
+display:none !important;
+}
+
+body{
+background:white;
+margin:0;
+padding:0;
+}
+
+.builder{
+padding:0;
+margin:0;
+}
+
+h2{
+display:none;
+}
+
+.container{
+display:block;
+margin:0;
+padding:0;
+}
+
+#resume-preview{
+box-shadow:none;
+border-radius:0;
+padding:0;
+margin:0;
+width:100%;
+min-height:unset;
+height:auto;
+}
+}
+
+.about-image img{
+width:220px;
+height:220px;
+border-radius:50%;
+object-fit:cover;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.team-heading{
+text-align:center;
+font-size:28px;
+color:#16a34a;
+margin-top:60px;
+margin-bottom:30px;
+}
+
+.team-box{
+display:flex;
+justify-content:center;
+gap:60px;
+flex-wrap:wrap;
+}
+
+.member-card{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:12px;
+}
+
+.member-img-circle{
+width:180px;
+height:180px;
+border-radius:50%;
+overflow:hidden;
+border:4px solid #16a34a;
+box-shadow:0 8px 20px rgba(0,0,0,0.12);
+}
+
+.member-img-circle img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.member-card h4{
+font-size:20px;
+color:#222;
+}
+
+.social-links{
+display:flex;
+gap:14px;
+}
+
+.social-links a img{
+width:28px;
+height:28px;
+transition:0.3s;
+}
+
+.social-links a img:hover{
+transform:scale(1.2);
+}
+
+@media(max-width:900px){
+.team-box{
+gap:30px;
+}
+}
+
+.mentor-name{
+text-align:center;
+font-size:20px;
+color:#16a34a;
+margin-top:12px;
+}
+
+.mentor-link{
+display:block;
+text-align:center;
+margin-top:6px;
+color:#16a34a;
+font-weight:bold;
+text-decoration:none;
+font-size:15px;
+transition:0.3s;
+}
+
+.mentor-link:hover{
+color:#15803d;
+text-decoration:underline;
+}
+
+.atschool-logo{width:32px;height:32px;border-radius:50%;object-fit:cover;margin-top:8px;transition:0.3s;}
+
+.atschool-logo:hover{
+transform:scale(1.1);
+}
+
+.about-intro{
+max-width:800px;
+margin:0 auto 40px auto;
+text-align:center;
+font-size:18px;
+line-height:1.8;
+color:#333;
 }
