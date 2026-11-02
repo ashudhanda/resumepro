@@ -41,12 +41,12 @@ if(skills.trim()==""){
 skillBox.innerText="Your skills here.";
 }
 else{
-let list=skills.split(",");
+let list=skills.split(",").map(skill=>skill.trim()).filter(skill=>skill!=="");
 
 list.forEach(skill=>{
 let span=document.createElement("span");
 span.className="skill-tag";
-span.innerText=skill.trim();
+span.innerText=skill;
 skillBox.appendChild(span);
 });
 }
