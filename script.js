@@ -109,7 +109,7 @@ hideError("err-email");
 markNormal("email");
 }
 
-if(phone===""||phone.length!==10||isNaN(phone)){
+if(!/^\d{10}$/.test(phone)){
 showError("err-phone");
 markRed("phone");
 valid=false;
