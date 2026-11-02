@@ -68,6 +68,17 @@ function markNormal(id){
 document.getElementById(id).classList.remove("input-error");
 }
 
+function validateField(isValid,errorId,inputId){
+if(!isValid){
+showError(errorId);
+markRed(inputId);
+return false;
+}
+hideError(errorId);
+markNormal(inputId);
+return true;
+}
+
 document.getElementById("download-btn").addEventListener("click",function(){
 
 let valid=true;
@@ -82,86 +93,15 @@ let edu=document.getElementById("edu").value.trim();
 let exp=document.getElementById("exp").value.trim();
 let skills=document.getElementById("skills").value.trim();
 
-if(name===""){
-showError("err-name");
-markRed("name");
-valid=false;
-}else{
-hideError("err-name");
-markNormal("name");
-}
-
-if(role===""){
-showError("err-role");
-markRed("role");
-valid=false;
-}else{
-hideError("err-role");
-markNormal("role");
-}
-
-if(!/^[^@ ]+@[^@ ]+\.[^@ ]+$/.test(email)){
-showError("err-email");
-markRed("email");
-valid=false;
-}else{
-hideError("err-email");
-markNormal("email");
-}
-
-if(!/^\d{10}$/.test(phone)){
-showError("err-phone");
-markRed("phone");
-valid=false;
-}else{
-hideError("err-phone");
-markNormal("phone");
-}
-
-if(location===""){
-showError("err-location");
-markRed("location");
-valid=false;
-}else{
-hideError("err-location");
-markNormal("location");
-}
-
-if(about===""){
-showError("err-aboutme");
-markRed("aboutme");
-valid=false;
-}else{
-hideError("err-aboutme");
-markNormal("aboutme");
-}
-
-if(edu===""){
-showError("err-edu");
-markRed("edu");
-valid=false;
-}else{
-hideError("err-edu");
-markNormal("edu");
-}
-
-if(exp===""){
-showError("err-exp");
-markRed("exp");
-valid=false;
-}else{
-hideError("err-exp");
-markNormal("exp");
-}
-
-if(skills===""){
-showError("err-skills");
-markRed("skills");
-valid=false;
-}else{
-hideError("err-skills");
-markNormal("skills");
-}
+valid=validateField(name!=="","err-name","name")&&valid;
+valid=validateField(role!=="","err-role","role")&&valid;
+valid=validateField(/^[^@ ]+@[^@ ]+\.[^@ ]+$/.test(email),"err-email","email")&&valid;
+valid=validateField(/^\d{10}$/.test(phone),"err-phone","phone")&&valid;
+valid=validateField(location!=="","err-location","location")&&valid;
+valid=validateField(about!=="","err-aboutme","aboutme")&&valid;
+valid=validateField(edu!=="","err-edu","edu")&&valid;
+valid=validateField(exp!=="","err-exp","exp")&&valid;
+valid=validateField(skills!=="","err-skills","skills")&&valid;
 
 if(valid){
 window.print();
