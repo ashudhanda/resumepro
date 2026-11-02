@@ -100,7 +100,7 @@ hideError("err-role");
 markNormal("role");
 }
 
-if(email===""||!email.includes("@")){
+if(!/^[^@ ]+@[^@ ]+\.[^@ ]+$/.test(email)){
 showError("err-email");
 markRed("email");
 valid=false;
@@ -185,7 +185,7 @@ hideError("err-c-name");
 markNormal("c-name");
 }
 
-if(email===""||!email.includes("@")){
+if(!/^[^@ ]+@[^@ ]+\.[^@ ]+$/.test(email)){
 showError("err-c-email");
 markRed("c-email");
 valid=false;
