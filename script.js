@@ -53,19 +53,27 @@ skillBox.appendChild(span);
 }
 
 function showError(id){
-document.getElementById(id).style.display="block";
+let el=document.getElementById(id);
+if(!el) return;
+el.style.display="block";
 }
 
 function hideError(id){
-document.getElementById(id).style.display="none";
+let el=document.getElementById(id);
+if(!el) return;
+el.style.display="none";
 }
 
 function markRed(id){
-document.getElementById(id).classList.add("input-error");
+let el=document.getElementById(id);
+if(!el) return;
+el.classList.add("input-error");
 }
 
 function markNormal(id){
-document.getElementById(id).classList.remove("input-error");
+let el=document.getElementById(id);
+if(!el) return;
+el.classList.remove("input-error");
 }
 
 function validateField(isValid,errorId,inputId){
