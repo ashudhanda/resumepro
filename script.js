@@ -41,7 +41,7 @@ if(skills.trim()==""){
 skillBox.innerText="Your skills here.";
 }
 else{
-let list=skills.split(",").map(skill=>skill.trim()).filter(skill=>skill!=="");
+let list=[...new Set(skills.split(",").map(skill=>skill.trim()).filter(skill=>skill!==""))];
 
 list.forEach(skill=>{
 let span=document.createElement("span");
