@@ -157,9 +157,6 @@ line-height:1.8;
 
 .skill-tag{
 font-size:16px;
-}
-
-.skill-tag{
 display:inline-block;
 padding:7px 12px;
 background:#dcfce7;
@@ -200,28 +197,6 @@ flex-wrap:wrap;
 margin-top:40px;
 }
 
-.about-image img{
-width:320px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
-}
-
-.about-text{
-max-width:600px;
-}
-
-.about-text h3{
-font-size:32px;
-color:#16a34a;
-margin-bottom:15px;
-}
-
-.about-text p{
-font-size:18px;
-line-height:1.8;
-margin-bottom:15px;
-color:#333;
-}
 
 @media(max-width:900px){
 
@@ -247,9 +222,6 @@ flex-direction:column;
 width:250px;
 }
 
-.about-text{
-text-align:center;
-}
 }
 
 @media print{
@@ -391,12 +363,6 @@ transition:0.3s;
 .mentor-link:hover{
 color:#15803d;
 text-decoration:underline;
-}
-
-.atschool-logo{width:32px;height:32px;border-radius:50%;object-fit:cover;margin-top:8px;transition:0.3s;}
-
-.atschool-logo:hover{
-transform:scale(1.1);
 }
 
 .about-intro{
