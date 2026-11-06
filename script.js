@@ -117,6 +117,8 @@ window.print();
 });
 
 document.getElementById("contact-btn").addEventListener("click",function(){
+let btn=document.getElementById("contact-btn");
+if(btn.disabled) return;
 
 let valid=true;
 
@@ -152,6 +154,7 @@ markNormal("c-message");
 }
 
 if(valid){
+btn.disabled=true;
 emailjs.send("service_c51g08v","template_7s6ei6a",{
 name: name,
 email: email,
@@ -163,6 +166,8 @@ document.getElementById("c-email").value="";
 document.getElementById("c-message").value="";
 }).catch(function(){
 alert("Failed to send. Please try again.");
+}).finally(function(){
+btn.disabled=false;
 });
 }
 });
