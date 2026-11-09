@@ -80,6 +80,10 @@ if(!el) return;
 el.classList.remove("input-error");
 }
 
+function isValidEmail(value){
+return /^[^@ ]+@[^@ ]+\.[^@ ]+$/.test(value);
+}
+
 function validateField(isValid,errorId,inputId){
 if(!isValid){
 showError(errorId);
@@ -107,7 +111,7 @@ let skills=document.getElementById("skills").value.trim();
 
 valid=validateField(name!=="","err-name","name")&&valid;
 valid=validateField(role!=="","err-role","role")&&valid;
-valid=validateField(/^[^@ ]+@[^@ ]+\.[^@ ]+$/.test(email),"err-email","email")&&valid;
+valid=validateField(isValidEmail(email),"err-email","email")&&valid;
 valid=validateField(/^\d{10}$/.test(phone),"err-phone","phone")&&valid;
 valid=validateField(location!=="","err-location","location")&&valid;
 valid=validateField(about!=="","err-aboutme","aboutme")&&valid;
@@ -130,34 +134,16 @@ let name=document.getElementById("c-name").value.trim();
 let email=document.getElementById("c-email").value.trim();
 let message=document.getElementById("c-message").value.trim();
 
-if(name===""){
-showError("err-c-name");
-markRed("c-name");
-valid=false;
-}else{
-hideError("err-c-name");
-markNormal("c-name");
-}
-
-if(!/^[^@ ]+@[^@ ]+\.[^@ ]+$/.test(email)){
-showError("err-c-email");
-markRed("c-email");
-valid=false;
-}else{
-hideError("err-c-email");
-markNormal("c-email");
-}
-
-if(message===""){
-showError("err-c-msg");
-markRed("c-message");
-valid=false;
-}else{
-hideError("err-c-msg");
-markNormal("c-message");
-}
+valid=validateField(name!=="","err-c-name","c-name")&&valid;
+valid=validateField(isValidEmail(email),"err-c-email","c-email")&&valid;
+valid=validateField(message!=="","err-c-msg","c-message")&&valid;
 
 if(valid){
+if(typeof emailjs==="undefined"){
+alert("Email service is unavailable right now. Please try again later.");
+btn.disabled=false;
+return;
+}
 btn.disabled=true;
 emailjs.send("service_c51g08v","template_7s6ei6a",{
 name: name,
