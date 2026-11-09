@@ -222,6 +222,10 @@ flex-direction:column;
 width:250px;
 }
 
+.team-box{
+gap:30px;
+}
+
 }
 
 @media print{
@@ -336,11 +340,6 @@ transition:0.3s;
 transform:scale(1.2);
 }
 
-@media(max-width:900px){
-.team-box{
-gap:30px;
-}
-}
 
 .mentor-name{
 text-align:center;
