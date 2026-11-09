@@ -373,3 +373,33 @@ font-size:18px;
 line-height:1.8;
 color:#333;
 }
+.skip-link{
+position:absolute;
+left:16px;
+top:-60px;
+padding:10px 16px;
+background:#16a34a;
+color:white;
+border-radius:6px;
+z-index:200;
+transition:top 0.2s;
+}
+
+.skip-link:focus{
+top:12px;
+}
+
+@media (prefers-reduced-motion: reduce){
+*{
+scroll-behavior:auto;
+}
+}
+
+.social-links.centered{
+justify-content:center;
+margin-top:8px;
+}
+
+.mentor-title{
+margin-bottom:10px;
+}
