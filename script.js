@@ -1,4 +1,8 @@
+// EmailJS loads from a CDN; if that request fails the global is missing
+// and the whole builder must still work, so only init when it exists.
+if (typeof emailjs !== "undefined") {
 emailjs.init("lnX5w0H-myhX7si_r");
+}
 
 const inputs = document.querySelectorAll(".form-box input,.form-box textarea");
 
