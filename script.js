@@ -10,6 +10,16 @@ inputs.forEach(input=>{
 input.addEventListener("input",updateResume);
 });
 
+// Keep the phone field digits-only so pasted text can't leave it in a
+// state the 10-digit check will always reject.
+let phoneInput=document.getElementById("phone");
+if(phoneInput){
+phoneInput.addEventListener("input",function(){
+let digits=phoneInput.value.replace(/\D/g,"").slice(0,10);
+if(phoneInput.value!==digits) phoneInput.value=digits;
+});
+}
+
 function updateResume(){
 
 let name=document.getElementById("name").value;
