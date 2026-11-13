@@ -116,7 +116,9 @@ border-radius:6px;
 
 textarea{
 height:90px;
-resize:none;
+/* Let users stretch the About Me / Experience fields vertically instead
+of scrolling inside a fixed 90px box while writing. */
+resize:vertical;
 }
 
 button{
