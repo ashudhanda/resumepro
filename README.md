@@ -2,6 +2,8 @@
 
 Create professional resumes easily — build modern resumes in minutes with **live preview** and one-click **PDF download**.
 
+🔗 **Live demo:** https://ashudhanda.github.io/resumepro/
+
 ## ✨ Features
 
 - **Resume Builder form** — name, job role, email, phone, location, about me, education, experience, skills
