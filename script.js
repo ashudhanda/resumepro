@@ -94,10 +94,16 @@ function isValidEmail(value){
 return /^[^@ ]+@[^@ ]+\.[^@ ]+$/.test(value);
 }
 
+// First field that failed validation in the current submit attempt, so
+// the form can move keyboard focus to it instead of leaving the user
+// hunting for the error message.
+let firstInvalidField=null;
+
 function validateField(isValid,errorId,inputId){
 if(!isValid){
 showError(errorId);
 markRed(inputId);
+if(!firstInvalidField) firstInvalidField=inputId;
 return false;
 }
 hideError(errorId);
@@ -107,6 +113,7 @@ return true;
 
 document.getElementById("download-btn").addEventListener("click",function(){
 
+firstInvalidField=null;
 let valid=true;
 
 let name=document.getElementById("name").value.trim();
@@ -131,6 +138,9 @@ valid=validateField(skills!=="","err-skills","skills")&&valid;
 
 if(valid){
 window.print();
+}else{
+let first=document.getElementById(firstInvalidField);
+if(first) first.focus();
 }
 });
 
@@ -138,6 +148,7 @@ document.getElementById("contact-btn").addEventListener("click",function(){
 let btn=document.getElementById("contact-btn");
 if(btn.disabled) return;
 
+firstInvalidField=null;
 let valid=true;
 
 let name=document.getElementById("c-name").value.trim();
@@ -147,6 +158,12 @@ let message=document.getElementById("c-message").value.trim();
 valid=validateField(name!=="","err-c-name","c-name")&&valid;
 valid=validateField(isValidEmail(email),"err-c-email","c-email")&&valid;
 valid=validateField(message!=="","err-c-msg","c-message")&&valid;
+
+if(!valid){
+let first=document.getElementById(firstInvalidField);
+if(first) first.focus();
+return;
+}
 
 if(valid){
 if(typeof emailjs==="undefined"){
