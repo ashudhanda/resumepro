@@ -198,7 +198,9 @@
 <p>© 2026 ResumePro | All Rights Reserved</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script src="script.js"></script>
+<!-- defer: both scripts run after parsing, in order, so the EmailJS CDN
+cannot block first paint and script.js still sees the full DOM. -->
+<script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script defer src="script.js"></script>
 </body>
 </html>
