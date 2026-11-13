@@ -55,7 +55,15 @@ if(skills.trim()==""){
 skillBox.innerText="Your skills here.";
 }
 else{
-let list=[...new Set(skills.split(",").map(skill=>skill.trim()).filter(skill=>skill!==""))];
+// "HTML" and "html" are the same skill — dedupe case-insensitively
+// but keep the spelling the user typed first.
+let seenSkills=new Set();
+let list=skills.split(",").map(skill=>skill.trim()).filter(skill=>skill!=="").filter(skill=>{
+let key=skill.toLowerCase();
+if(seenSkills.has(key)) return false;
+seenSkills.add(key);
+return true;
+});
 
 list.forEach(skill=>{
 let span=document.createElement("span");
