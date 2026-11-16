@@ -99,7 +99,7 @@ el.classList.remove("input-error");
 }
 
 function isValidEmail(value){
-return /^[^@ ]+@[^@ ]+\.[^@ ]+$/.test(value);
+return /^[^@ ]+@[^@ ]+\.[^@ ]{2,}$/.test(value);
 }
 
 // First field that failed validation in the current submit attempt, so
