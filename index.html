@@ -49,39 +49,39 @@
 <div class="form-box">
 
 <label for="name">Full Name</label>
-<input type="text" id="name" placeholder="Enter full name" autocomplete="name">
+<input type="text" id="name" aria-describedby="err-name" placeholder="Enter full name" autocomplete="name">
 <span class="error" aria-live="polite" id="err-name">Name is required</span>
 
 <label for="role">Job Role</label>
-<input type="text" id="role" placeholder="Enter job role">
+<input type="text" id="role" aria-describedby="err-role" placeholder="Enter job role">
 <span class="error" aria-live="polite" id="err-role">Job role is required</span>
 
 <label for="email">Email</label>
-<input type="email" id="email" placeholder="Enter email" autocomplete="email">
+<input type="email" id="email" aria-describedby="err-email" placeholder="Enter email" autocomplete="email">
 <span class="error" aria-live="polite" id="err-email">Valid email is required</span>
 
 <label for="phone">Phone</label>
-<input type="tel" id="phone" placeholder="Enter 10 digit phone" maxlength="10" autocomplete="tel" inputmode="numeric">
+<input type="tel" id="phone" aria-describedby="err-phone" placeholder="Enter 10 digit phone" maxlength="10" autocomplete="tel" inputmode="numeric">
 <span class="error" aria-live="polite" id="err-phone">Enter valid 10 digit phone number</span>
 
 <label for="location">Location</label>
-<input type="text" id="location" placeholder="Enter location" autocomplete="address-level2">
+<input type="text" id="location" aria-describedby="err-location" placeholder="Enter location" autocomplete="address-level2">
 <span class="error" aria-live="polite" id="err-location">Location is required</span>
 
 <label for="aboutme">About Me</label>
-<textarea id="aboutme" placeholder="Write about yourself"></textarea>
+<textarea id="aboutme" aria-describedby="err-aboutme" placeholder="Write about yourself"></textarea>
 <span class="error" aria-live="polite" id="err-aboutme">About me is required</span>
 
 <label for="edu">Education</label>
-<input type="text" id="edu" placeholder="Enter education details">
+<input type="text" id="edu" aria-describedby="err-edu" placeholder="Enter education details">
 <span class="error" aria-live="polite" id="err-edu">Education is required</span>
 
 <label for="exp">Experience</label>
-<textarea id="exp" placeholder="Enter experience details"></textarea>
+<textarea id="exp" aria-describedby="err-exp" placeholder="Enter experience details"></textarea>
 <span class="error" aria-live="polite" id="err-exp">Experience is required</span>
 
 <label for="skills">Skills (comma separated)</label>
-<input type="text" id="skills" placeholder="HTML, CSS, JavaScript">
+<input type="text" id="skills" aria-describedby="err-skills" placeholder="HTML, CSS, JavaScript">
 <span class="error" aria-live="polite" id="err-skills">Skills are required</span>
 
 <button id="download-btn">Download PDF</button>
@@ -116,15 +116,15 @@
 <section id="contact" class="contact">
 <h2>Contact Us</h2>
 <label for="c-name">Your Name</label>
-<input type="text" id="c-name" placeholder="Your Name" autocomplete="name">
+<input type="text" id="c-name" aria-describedby="err-c-name" placeholder="Your Name" autocomplete="name">
 <span class="error" aria-live="polite" id="err-c-name">Name is required</span>
 
 <label for="c-email">Your Email</label>
-<input type="email" id="c-email" placeholder="Your Email" autocomplete="email">
+<input type="email" id="c-email" aria-describedby="err-c-email" placeholder="Your Email" autocomplete="email">
 <span class="error" aria-live="polite" id="err-c-email">Valid email is required</span>
 
 <label for="c-message">Your Message</label>
-<textarea id="c-message" placeholder="Your Message"></textarea>
+<textarea id="c-message" aria-describedby="err-c-msg" placeholder="Your Message"></textarea>
 <span class="error" aria-live="polite" id="err-c-msg">Message is required</span>
 
 <button id="contact-btn">Send Message</button>
