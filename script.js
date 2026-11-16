@@ -119,6 +119,22 @@ markNormal(inputId);
 return true;
 }
 
+// The builder and contact sections have no <form>, so Enter in a field
+// would do nothing. Treat Enter as a click on the section's button,
+// except inside a textarea where Enter must insert a newline.
+function submitOnEnter(containerSelector,buttonId){
+let container=document.querySelector(containerSelector);
+if(!container) return;
+container.addEventListener("keydown",function(e){
+if(e.key!=="Enter") return;
+if(e.target.tagName==="TEXTAREA") return;
+e.preventDefault();
+document.getElementById(buttonId).click();
+});
+}
+submitOnEnter(".form-box","download-btn");
+submitOnEnter(".contact","contact-btn");
+
 document.getElementById("download-btn").addEventListener("click",function(){
 
 firstInvalidField=null;
