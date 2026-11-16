@@ -173,10 +173,8 @@ if(first) first.focus();
 return;
 }
 
-if(valid){
 if(typeof emailjs==="undefined"){
 alert("Email service is unavailable right now. Please try again later.");
-btn.disabled=false;
 return;
 }
 btn.disabled=true;
@@ -194,5 +192,4 @@ alert("Failed to send. Please try again.");
 }).finally(function(){
 btn.disabled=false;
 });
-}
 });
