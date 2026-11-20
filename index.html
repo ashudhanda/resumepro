@@ -63,7 +63,7 @@
 <span class="error" aria-live="polite" id="err-email">Valid email is required</span>
 
 <label for="phone">Phone</label>
-<input type="tel" id="phone" aria-describedby="err-phone" placeholder="Enter 10 digit phone" maxlength="10" autocomplete="tel" inputmode="numeric">
+<input type="tel" id="phone" aria-describedby="err-phone" placeholder="Enter 10 digit phone" maxlength="10" pattern="[0-9]{10}" title="Enter a 10 digit phone number" autocomplete="tel" inputmode="numeric">
 <span class="error" aria-live="polite" id="err-phone">Enter valid 10 digit phone number</span>
 
 <label for="location">Location</label>
