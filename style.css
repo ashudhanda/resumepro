@@ -47,7 +47,10 @@ color:#16a34a;
 }
 
 .home{
-height:100vh;
+/* min-height (not height) so the heading and button are never clipped
+on short screens, and svh so mobile browser chrome doesn't hide content. */
+min-height:100vh;
+min-height:100svh;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -134,16 +137,6 @@ margin-top:10px;
 
 button:hover{
 background:#15803d;
-}
-
-/* Visible keyboard focus for links, buttons and fields. Mouse users see
-no change — :focus-visible only matches keyboard focus. */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible{
-outline:2px solid #16a34a;
-outline-offset:2px;
 }
 
 .preview-box h1{
