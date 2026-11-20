@@ -32,27 +32,27 @@ let edu=document.getElementById("edu").value;
 let exp=document.getElementById("exp").value;
 let skills=document.getElementById("skills").value;
 
-document.getElementById("resume-name").innerText=name || "Your Name";
-document.getElementById("resume-role").innerText=role || "Your Role";
-document.getElementById("resume-contact").innerText=
+document.getElementById("resume-name").textContent=name || "Your Name";
+document.getElementById("resume-role").textContent=role || "Your Role";
+document.getElementById("resume-contact").textContent=
 (email || "Email")+" | "+
 (phone || "Phone")+" | "+
 (location || "Location");
 
-document.getElementById("resume-about").innerText=
+document.getElementById("resume-about").textContent=
 about || "Your summary here.";
 
-document.getElementById("resume-edu").innerText=
+document.getElementById("resume-edu").textContent=
 edu || "Your education here.";
 
-document.getElementById("resume-exp").innerText=
+document.getElementById("resume-exp").textContent=
 exp || "Your experience here.";
 
 let skillBox=document.getElementById("resume-skills");
 skillBox.innerHTML="";
 
 if(skills.trim()==""){
-skillBox.innerText="Your skills here.";
+skillBox.textContent="Your skills here.";
 }
 else{
 // "HTML" and "html" are the same skill — dedupe case-insensitively
@@ -68,7 +68,7 @@ return true;
 list.forEach(skill=>{
 let span=document.createElement("span");
 span.className="skill-tag";
-span.innerText=skill;
+span.textContent=skill;
 skillBox.appendChild(span);
 });
 }
