@@ -10,6 +10,7 @@ Create professional resumes easily — build modern resumes in minutes with **li
 - **Live preview** — the resume updates on the right side as you type
 - **Validation** — inline error messages for required fields (valid email, 10-digit phone, etc.)
 - **Download as PDF** — export your finished resume (opens the browser print dialog, so choose "Save as PDF" as the destination)
+- **Print-ready** — the print stylesheet hides the nav, form, contact and about sections and formats just the resume for A4 (15mm margins)
 - **Contact form** — powered by EmailJS
 - **Keyboard friendly** — press Enter in any field to submit the builder or the contact section (Enter inside a text area still adds a new line)
 
