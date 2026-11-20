@@ -129,7 +129,8 @@ container.addEventListener("keydown",function(e){
 if(e.key!=="Enter") return;
 if(e.target.tagName==="TEXTAREA") return;
 e.preventDefault();
-document.getElementById(buttonId).click();
+let button=document.getElementById(buttonId);
+if(button) button.click();
 });
 }
 submitOnEnter(".form-box","download-btn");
