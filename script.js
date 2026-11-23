@@ -4,6 +4,18 @@ if (typeof emailjs !== "undefined") {
 emailjs.init("lnX5w0H-myhX7si_r");
 }
 
+// Preview nodes are written on every keystroke, so look them up
+// once instead of querying the DOM ten times per input event.
+const preview={
+name:document.getElementById("resume-name"),
+role:document.getElementById("resume-role"),
+contact:document.getElementById("resume-contact"),
+about:document.getElementById("resume-about"),
+edu:document.getElementById("resume-edu"),
+exp:document.getElementById("resume-exp"),
+skills:document.getElementById("resume-skills")
+};
+
 const inputs = document.querySelectorAll(".form-box input,.form-box textarea");
 
 inputs.forEach(input=>{
@@ -32,23 +44,23 @@ let edu=document.getElementById("edu").value;
 let exp=document.getElementById("exp").value;
 let skills=document.getElementById("skills").value;
 
-document.getElementById("resume-name").textContent=name || "Your Name";
-document.getElementById("resume-role").textContent=role || "Your Role";
-document.getElementById("resume-contact").textContent=
+preview.name.textContent=name || "Your Name";
+preview.role.textContent=role || "Your Role";
+preview.contact.textContent=
 (email || "Email")+" | "+
 (phone || "Phone")+" | "+
 (location || "Location");
 
-document.getElementById("resume-about").textContent=
+preview.about.textContent=
 about || "Your summary here.";
 
-document.getElementById("resume-edu").textContent=
+preview.edu.textContent=
 edu || "Your education here.";
 
-document.getElementById("resume-exp").textContent=
+preview.exp.textContent=
 exp || "Your experience here.";
 
-let skillBox=document.getElementById("resume-skills");
+let skillBox=preview.skills;
 skillBox.innerHTML="";
 
 if(skills.trim()==""){
