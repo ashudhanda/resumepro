@@ -27,7 +27,14 @@ input.addEventListener("input",updateResume);
 let phoneInput=document.getElementById("phone");
 if(phoneInput){
 phoneInput.addEventListener("input",function(){
-let digits=phoneInput.value.replace(/\D/g,"").slice(0,10);
+// Pasted numbers often carry the country code ("+91 98765 43210")
+// or a trunk zero ("09876543210"); strip that prefix before
+// keeping the 10 digits the validator expects, instead of
+// chopping the first 10 digits off the real number.
+let digits=phoneInput.value.replace(/\D/g,"");
+if(digits.length===12&&digits.startsWith("91")) digits=digits.slice(2);
+else if(digits.length===11&&digits.startsWith("0")) digits=digits.slice(1);
+digits=digits.slice(0,10);
 if(phoneInput.value!==digits) phoneInput.value=digits;
 });
 }
