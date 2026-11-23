@@ -77,12 +77,17 @@ seenSkills.add(key);
 return true;
 });
 
+if(list.length===0){
+skillBox.textContent="Your skills here.";
+}
+else{
 list.forEach(skill=>{
 let span=document.createElement("span");
 span.className="skill-tag";
 span.textContent=skill;
 skillBox.appendChild(span);
 });
+}
 }
 }
 
@@ -171,7 +176,8 @@ valid=validateField(location!=="","err-location","location")&&valid;
 valid=validateField(about!=="","err-aboutme","aboutme")&&valid;
 valid=validateField(edu!=="","err-edu","edu")&&valid;
 valid=validateField(exp!=="","err-exp","exp")&&valid;
-valid=validateField(skills!=="","err-skills","skills")&&valid;
+let hasSkill=skills.split(",").some(skill=>skill.trim()!=="");
+valid=validateField(hasSkill,"err-skills","skills")&&valid;
 
 if(valid){
 window.print();
