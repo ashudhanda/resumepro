@@ -143,6 +143,9 @@ el.classList.remove("input-error");
 }
 
 function isValidEmail(value){
+// The pattern alone accepts "a..b@c.com", ".a@b.com" and "a@b.com.",
+// so reject stray dots explicitly before testing the shape.
+if(value.includes("..") || value.includes(".@") || value.includes("@.") || value.startsWith(".") || value.endsWith(".")) return false;
 return /^[^@ ]+@[^@ ]+\.[^@ ]{2,}$/.test(value);
 }
 
