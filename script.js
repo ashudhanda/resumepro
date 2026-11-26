@@ -38,7 +38,7 @@ input.addEventListener("input",updateResume);
 
 // Keep the phone field digits-only so pasted text can't leave it in a
 // state the 10-digit check will always reject.
-let phoneInput=fields.phone;
+const phoneInput=fields.phone;
 if(phoneInput){
 phoneInput.addEventListener("input",function(){
 // Pasted numbers often carry the country code ("+91 98765 43210")
@@ -61,15 +61,15 @@ updateResume();
 
 function updateResume(){
 
-let name=fields.name.value;
-let role=fields.role.value;
-let email=fields.email.value;
-let phone=fields.phone.value;
-let location=fields.location.value;
-let about=fields.about.value;
-let edu=fields.edu.value;
-let exp=fields.exp.value;
-let skills=fields.skills.value;
+const name=fields.name.value;
+const role=fields.role.value;
+const email=fields.email.value;
+const phone=fields.phone.value;
+const location=fields.location.value;
+const about=fields.about.value;
+const edu=fields.edu.value;
+const exp=fields.exp.value;
+const skills=fields.skills.value;
 
 preview.name.textContent=name || "Your Name";
 preview.role.textContent=role || "Your Role";
@@ -87,7 +87,7 @@ edu || "Your education here.";
 preview.exp.textContent=
 exp || "Your experience here.";
 
-let skillBox=preview.skills;
+const skillBox=preview.skills;
 skillBox.innerHTML="";
 
 if(skills.trim()==""){
@@ -96,9 +96,9 @@ skillBox.textContent="Your skills here.";
 else{
 // "HTML" and "html" are the same skill — dedupe case-insensitively
 // but keep the spelling the user typed first.
-let seenSkills=new Set();
-let list=skills.split(",").map(skill=>skill.trim()).filter(skill=>skill!=="").filter(skill=>{
-let key=skill.toLowerCase();
+const seenSkills=new Set();
+const list=skills.split(",").map(skill=>skill.trim()).filter(skill=>skill!=="").filter(skill=>{
+const key=skill.toLowerCase();
 if(seenSkills.has(key)) return false;
 seenSkills.add(key);
 return true;
@@ -109,7 +109,7 @@ skillBox.textContent="Your skills here.";
 }
 else{
 list.forEach(skill=>{
-let span=document.createElement("span");
+const span=document.createElement("span");
 span.className="skill-tag";
 span.textContent=skill;
 skillBox.appendChild(span);
@@ -119,25 +119,25 @@ skillBox.appendChild(span);
 }
 
 function showError(id){
-let el=document.getElementById(id);
+const el=document.getElementById(id);
 if(!el) return;
 el.style.display="block";
 }
 
 function hideError(id){
-let el=document.getElementById(id);
+const el=document.getElementById(id);
 if(!el) return;
 el.style.display="none";
 }
 
 function markRed(id){
-let el=document.getElementById(id);
+const el=document.getElementById(id);
 if(!el) return;
 el.classList.add("input-error");
 }
 
 function markNormal(id){
-let el=document.getElementById(id);
+const el=document.getElementById(id);
 if(!el) return;
 el.classList.remove("input-error");
 }
@@ -170,13 +170,13 @@ return true;
 // would do nothing. Treat Enter as a click on the section's button,
 // except inside a textarea where Enter must insert a newline.
 function submitOnEnter(containerSelector,buttonId){
-let container=document.querySelector(containerSelector);
+const container=document.querySelector(containerSelector);
 if(!container) return;
 container.addEventListener("keydown",function(e){
 if(e.key!=="Enter") return;
 if(e.target.tagName==="TEXTAREA") return;
 e.preventDefault();
-let button=document.getElementById(buttonId);
+const button=document.getElementById(buttonId);
 if(button) button.click();
 });
 }
@@ -188,15 +188,15 @@ document.getElementById("download-btn").addEventListener("click",function(){
 firstInvalidField=null;
 let valid=true;
 
-let name=document.getElementById("name").value.trim();
-let role=document.getElementById("role").value.trim();
-let email=document.getElementById("email").value.trim();
-let phone=document.getElementById("phone").value.trim();
-let location=document.getElementById("location").value.trim();
-let about=document.getElementById("aboutme").value.trim();
-let edu=document.getElementById("edu").value.trim();
-let exp=document.getElementById("exp").value.trim();
-let skills=document.getElementById("skills").value.trim();
+const name=document.getElementById("name").value.trim();
+const role=document.getElementById("role").value.trim();
+const email=document.getElementById("email").value.trim();
+const phone=document.getElementById("phone").value.trim();
+const location=document.getElementById("location").value.trim();
+const about=document.getElementById("aboutme").value.trim();
+const edu=document.getElementById("edu").value.trim();
+const exp=document.getElementById("exp").value.trim();
+const skills=document.getElementById("skills").value.trim();
 
 valid=validateField(name!=="","err-name","name")&&valid;
 valid=validateField(role!=="","err-role","role")&&valid;
@@ -206,34 +206,34 @@ valid=validateField(location!=="","err-location","location")&&valid;
 valid=validateField(about!=="","err-aboutme","aboutme")&&valid;
 valid=validateField(edu!=="","err-edu","edu")&&valid;
 valid=validateField(exp!=="","err-exp","exp")&&valid;
-let hasSkill=skills.split(",").some(skill=>skill.trim()!=="");
+const hasSkill=skills.split(",").some(skill=>skill.trim()!=="");
 valid=validateField(hasSkill,"err-skills","skills")&&valid;
 
 if(valid){
 window.print();
 }else{
-let first=document.getElementById(firstInvalidField);
+const first=document.getElementById(firstInvalidField);
 if(first) first.focus();
 }
 });
 
 document.getElementById("contact-btn").addEventListener("click",function(){
-let btn=document.getElementById("contact-btn");
+const btn=document.getElementById("contact-btn");
 if(btn.disabled) return;
 
 firstInvalidField=null;
 let valid=true;
 
-let name=document.getElementById("c-name").value.trim();
-let email=document.getElementById("c-email").value.trim();
-let message=document.getElementById("c-message").value.trim();
+const name=document.getElementById("c-name").value.trim();
+const email=document.getElementById("c-email").value.trim();
+const message=document.getElementById("c-message").value.trim();
 
 valid=validateField(name!=="","err-c-name","c-name")&&valid;
 valid=validateField(isValidEmail(email),"err-c-email","c-email")&&valid;
 valid=validateField(message!=="","err-c-msg","c-message")&&valid;
 
 if(!valid){
-let first=document.getElementById(firstInvalidField);
+const first=document.getElementById(firstInvalidField);
 if(first) first.focus();
 return;
 }
