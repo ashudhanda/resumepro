@@ -156,8 +156,14 @@ outline:2px solid #16a34a;
 outline-offset:2px;
 }
 
-.preview-box h1{
+/* The preview name is an h2 (the page keeps a single h1), so reset the
+global h2 centring, green colour and bottom margin to keep it rendering
+exactly as the old h1 did. */
+.preview-box h2{
 font-size:42px;
+text-align:left;
+color:#222;
+margin-bottom:0;
 }
 
 .preview-box h3{
