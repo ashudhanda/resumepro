@@ -49,7 +49,13 @@ let digits=phoneInput.value.replace(/\D/g,"");
 if(digits.length===12&&digits.startsWith("91")) digits=digits.slice(2);
 else if(digits.length===11&&digits.startsWith("0")) digits=digits.slice(1);
 digits=digits.slice(0,10);
-if(phoneInput.value!==digits) phoneInput.value=digits;
+if(phoneInput.value!==digits){
+phoneInput.value=digits;
+// updateResume already ran for this keystroke with the raw pasted
+// value, so refresh the preview with the cleaned number instead of
+// leaving the stale text there until the next keystroke.
+updateResume();
+}
 });
 }
 
