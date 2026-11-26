@@ -16,6 +16,20 @@ exp:document.getElementById("resume-exp"),
 skills:document.getElementById("resume-skills")
 };
 
+// The builder fields are read on every keystroke too, so cache them
+// alongside the preview nodes instead of querying the DOM each time.
+const fields={
+name:document.getElementById("name"),
+role:document.getElementById("role"),
+email:document.getElementById("email"),
+phone:document.getElementById("phone"),
+location:document.getElementById("location"),
+about:document.getElementById("aboutme"),
+edu:document.getElementById("edu"),
+exp:document.getElementById("exp"),
+skills:document.getElementById("skills")
+};
+
 const inputs = document.querySelectorAll(".form-box input,.form-box textarea");
 
 inputs.forEach(input=>{
@@ -24,7 +38,7 @@ input.addEventListener("input",updateResume);
 
 // Keep the phone field digits-only so pasted text can't leave it in a
 // state the 10-digit check will always reject.
-let phoneInput=document.getElementById("phone");
+let phoneInput=fields.phone;
 if(phoneInput){
 phoneInput.addEventListener("input",function(){
 // Pasted numbers often carry the country code ("+91 98765 43210")
@@ -41,15 +55,15 @@ if(phoneInput.value!==digits) phoneInput.value=digits;
 
 function updateResume(){
 
-let name=document.getElementById("name").value;
-let role=document.getElementById("role").value;
-let email=document.getElementById("email").value;
-let phone=document.getElementById("phone").value;
-let location=document.getElementById("location").value;
-let about=document.getElementById("aboutme").value;
-let edu=document.getElementById("edu").value;
-let exp=document.getElementById("exp").value;
-let skills=document.getElementById("skills").value;
+let name=fields.name.value;
+let role=fields.role.value;
+let email=fields.email.value;
+let phone=fields.phone.value;
+let location=fields.location.value;
+let about=fields.about.value;
+let edu=fields.edu.value;
+let exp=fields.exp.value;
+let skills=fields.skills.value;
 
 preview.name.textContent=name || "Your Name";
 preview.role.textContent=role || "Your Role";
