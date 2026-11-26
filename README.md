@@ -25,6 +25,23 @@ Every field in the builder is required. On Download PDF the form checks:
 
 Errors appear under the field, the field gets a red border, and focus moves to the first field that failed. The contact form checks name, a valid email, and a non-empty message the same way.
 
+## ♿ Accessibility
+
+- **Skip link** — keyboard users can jump straight to the resume builder
+- **Live error messages** — validation errors are announced via `aria-live="polite"`, and focus moves to the first field that failed
+- **Visible focus** — links, buttons and fields get a clear outline on keyboard focus (`:focus-visible`)
+- **Reduced motion** — smooth scrolling is disabled when the OS asks for it
+- **Single h1** — the page has one top-level heading; the resume preview name is an h2
+- **No-JS notice** — a `<noscript>` message explains the builder needs JavaScript
+
+## 📁 Project structure
+
+- `index.html` — page markup: builder form, live preview, contact and about sections
+- `style.css` — all styling, including the A4 print stylesheet
+- `script.js` — live preview, validation, phone cleanup, PDF via print, EmailJS contact form
+- `favicon.svg` — site icon
+- `ashu.png`, `shinu.png`, `teacher.png` — team and mentor photos
+
 ## 🛠 Tech Stack
 
 - HTML5, CSS3, Vanilla JavaScript
